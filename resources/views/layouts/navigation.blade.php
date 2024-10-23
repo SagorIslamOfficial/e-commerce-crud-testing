@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ url('/') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
@@ -14,6 +14,18 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.index', 'category.create', 'category.edit')">
+                        {{ __('Category') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('subcategory.index')" :active="request()->routeIs('subcategory.index', 'subcategory.create', 'subcategory.edit')">
+                        {{ __('Sub Category') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index', 'product.create', 'product.edit', 'product.show')">
+                        {{ __('Product') }}
                     </x-nav-link>
                 </div>
             </div>

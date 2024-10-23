@@ -20,7 +20,7 @@ return new class extends Migration
             // Define columns of product
             $table->string('name');
             $table->string('slug');
-            $table->string('description');
+            $table->longText('description');
             $table->string('image')->nullable();
             $table->integer('old_price');
             $table->integer('new_price');
